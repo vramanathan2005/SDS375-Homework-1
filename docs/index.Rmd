@@ -1,0 +1,87 @@
+---
+title: "Varun Ramanathan"
+image: "VarunRamanathan.png"
+output: postcards::trestles
+date: ""
+---
+
+<style>
+/* Bullet markers + basic layout */
+.trestles .content ul > li::marker { color: #BF5700 !important; }
+
+.button-row {
+  margin: 1rem 0 0.5rem 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.btn{
+  display: inline-block;
+  padding: 0.55rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid #BF5700;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 120ms ease;
+}
+.btn:hover{ background-color: #BF5700; color: #fff !important; }
+
+/* Optional: slightly narrower text column */
+.trestles .content { max-width: 720px; }
+</style>
+
+<script>
+// Force burnt-orange via inline styles after DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  const ut = '#BF5700';
+  // Color every element in the postcard (both columns)
+  document.querySelectorAll('.postcard, .postcard *').forEach(el => {
+    el.style.color = ut;
+  });
+  // Button borders + hover behavior
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.style.color = ut;
+    btn.style.borderColor = ut;
+    btn.addEventListener('mouseenter', () => { btn.style.backgroundColor = ut; btn.style.color = '#fff'; });
+    btn.addEventListener('mouseleave', () => { btn.style.backgroundColor = ''; btn.style.color = ut; });
+  });
+});
+</script>
+
+---
+
+### About Me
+Hey y'all — I'm Varun Ramanathan, a 3rd-year **Statistics & Data Science + Plan II Honors** student at **UT Austin**. Super excited to take **Data Product Development** this semester. I've been involved in a couple of organizations at UT Austin, including ASA (American Statistical Association) and BOSI (Business of Sports Institute). Career wise, I hope I end up working in Football Analytics for an NFL team.
+
+<div class="button-row">
+  <a class="btn" href="https://github.com/vramanathan2005" target="_blank" rel="noopener">GitHub</a>
+  <a class="btn" href="https://www.linkedin.com/in/varun-ramanathan/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+
+---
+
+### A few things I like
+- Texas Longhorns Football
+- Peyton Manning
+- San Antonio Spurs
+- Tim Duncan
+- Denver Broncos
+- Cooking
+- Sacha Baron Cohen movies
+- The Dictator, specifically, in terms of Sacha Baron Cohen movies
+- Sports analytics projects  
+- My Shiny App addiction
+
+
+---
+
+```{r build_time, echo=FALSE, results='asis'}
+ts <- format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z")
+cat(sprintf('
+<div style="margin-top:12px; display:inline-flex; align-items:center; gap:.5rem; padding:.5rem .75rem; border:1px solid rgba(0,0,0,.15); border-radius:9999px; font-size:0.95rem; line-height:1.2; font-family: inherit;">
+  <span style="font-weight:600; opacity:.85;">Build time: </span>
+  <span style="font-variant-numeric: tabular-nums;">%s</span>
+</div>', ts))
+```
+
+
